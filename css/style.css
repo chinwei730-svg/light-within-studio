@@ -1,0 +1,609 @@
+/* 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft JhengHei', 'Segoe UI', 'Helvetica Neue', sans-serif;
+    line-height: 1.8;
+    color: #3E3E3E;
+    background: #FAF9F6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 導航列 */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3E3E3E;
+    letter-spacing: 0.5px;
+}
+
+.logo-subtitle {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: #C9A961;
+    letter-spacing: 2px;
+    margin-top: -2px;
+    text-transform: uppercase;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #5A5A5A;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #C9A961;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #C9A961;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* 手機版選單按鈕 */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 2px;
+    background: #8B7355;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* 首頁橫幅 */
+.hero {
+    background: linear-gradient(rgba(250, 249, 246, 0.85), rgba(245, 245, 220, 0.85)), url('../images/title/t_0001.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 180px 20px 120px;
+    text-align: center;
+    margin-top: 70px;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(250, 249, 246, 0.3) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 1s;
+    color: #3E3E3E;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.hero-english {
+    font-size: 1rem;
+    color: #C9A961;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    animation: fadeInUp 1s 0.1s backwards;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 1s 0.2s backwards;
+    color: #5A5A5A;
+    font-weight: 300;
+}
+
+/* 按鈕樣式 */
+.btn {
+    display: inline-block;
+    padding: 14px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: #C9A961;
+    color: #FFFFFF;
+    animation: fadeInUp 1s 0.4s backwards;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+}
+
+.btn-primary:hover {
+    background: #B89851;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #8B7355;
+    border: 2px solid #8B7355;
+}
+
+.btn-secondary:hover {
+    background: #8B7355;
+    color: #FFFFFF;
+}
+
+/* 區塊標題 */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #3E3E3E;
+    position: relative;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #C9A961;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #C9A961, transparent);
+    margin: 1.5rem auto 0.5rem;
+}
+
+/* 關於我們 */
+.about {
+    padding: 100px 20px;
+    background: #FFFFFF;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #3E3E3E;
+    font-weight: 400;
+}
+
+.about-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 2;
+    color: #5A5A5A;
+}
+
+.about-image {
+    height: 450px;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(201, 169, 97, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+/* 課程介紹 */
+.courses {
+    padding: 100px 20px;
+    background: #FAF9F6;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.course-card {
+    background: #FFFFFF;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(201, 169, 97, 0.1);
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.course-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.1));
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.course-card:hover .course-image img {
+    transform: scale(1.1);
+}
+
+.course-info {
+    padding: 2rem;
+}
+
+.course-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #3E3E3E;
+    font-weight: 400;
+}
+
+.course-info p {
+    margin-bottom: 1.8rem;
+    color: #5A5A5A;
+    line-height: 1.8;
+}
+
+/* 作品展示 */
+.gallery {
+    padding: 100px 20px;
+    background: #FFFFFF;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    height: 280px;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(201, 169, 97, 0.1);
+    position: relative;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(201, 169, 97, 0.1);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* 圖片佔位符 */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #F5F5DC 0%, #E8E6DF 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C9A961;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* 聯絡我們 */
+.contact {
+    padding: 100px 20px;
+    background: #FAF9F6;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.info-item {
+    padding: 1.5rem;
+    background: #FFFFFF;
+    border-radius: 2px;
+    border-left: 3px solid #C9A961;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #3E3E3E;
+    font-weight: 400;
+}
+
+.info-item p {
+    color: #5A5A5A;
+    font-size: 1rem;
+}
+
+/* 表單 */
+.contact-form {
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 2px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(201, 169, 97, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #E8E6DF;
+    border-radius: 2px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #FAF9F6;
+    transition: all 0.3s ease;
+    color: #3E3E3E;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #C9A961;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* 頁尾 */
+.footer {
+    background: #3E3E3E;
+    color: #E8E6DF;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid #C9A961;
+}
+
+.footer-content {
+    margin-bottom: 1rem;
+}
+
+.footer-english {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #C9A961;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* 動畫 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 響應式設計 - 平板 */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.08);
+        padding: 2.5rem 0;
+        border-top: 1px solid rgba(201, 169, 97, 0.2);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* 響應式設計 - 手機 */
+@media (max-width: 480px) {
+    .hero {
+        padding: 140px 20px 90px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-english {
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        height: 320px;
+    }
+
+    .contact-form {
+        padding: 1.8rem;
+    }
+}
