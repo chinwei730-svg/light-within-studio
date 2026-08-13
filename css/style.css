@@ -197,6 +197,18 @@ body {
     color: #FFFFFF;
 }
 
+.btn-register {
+    background: #C9A961;
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+}
+
+.btn-register:hover {
+    background: #B89851;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
+}
+
 /* 區塊標題 */
 .section-title {
     text-align: center;
