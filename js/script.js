@@ -5,36 +5,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
 
-        // 漢堡選單動畫
-        this.classList.toggle('active');
-    });
+            // 漢堡選單動畫
+            this.classList.toggle('active');
+        });
+    }
 
     // 點擊選單項目後關閉選單
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
+            if (navMenu) { navMenu.classList.remove('active'); }
+            if (hamburger) { hamburger.classList.remove('active'); }
         });
     });
 
     // 平滑滾動
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
 
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 60;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            // 只攔截本頁錨點（#開頭）。子頁面的 index.html#courses 這類跨頁連結
+            // 必須讓瀏覽器正常導頁，否則會被 preventDefault 擋成死連結。
+            if (!targetId || targetId.charAt(0) !== '#') {
+                return;
             }
+
+            const targetSection = document.querySelector(targetId);
+            if (!targetSection) {
+                return;
+            }
+
+            e.preventDefault();
+            const offsetTop = targetSection.offsetTop - 60;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
         });
     });
 
