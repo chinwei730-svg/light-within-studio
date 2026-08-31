@@ -1037,3 +1037,15 @@ body {
         padding-bottom: 90px;
     }
 }
+
+/* 課程卡片標題：桌機班別接在同一行（以空格分隔），
+   手機則把班別移到第二行，避免在不自然的位置斷字 */
+.course-info h3 .course-type {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .course-info h3 .course-type {
+        display: block;
+    }
+}
