@@ -1089,3 +1089,18 @@ body {
         line-height: 1.7;
     }
 }
+
+/* 地圖旁的說明：釐清圖釘位置不等於教室位置 */
+.map-note {
+    font-size: 0.85rem;
+    color: #8B7355;
+    line-height: 1.7;
+    margin-top: 1rem;
+    padding-left: 0.9rem;
+    border-left: 2px solid rgba(201, 169, 97, 0.5);
+}
+
+.work-item .map-note {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
