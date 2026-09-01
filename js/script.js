@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 點擊選單項目後關閉選單
-    const navLinks = document.querySelectorAll('.nav-link');
+    // 綁 .nav-menu 底下所有 <a>，不是只綁 .nav-link：
+    // 領域下拉裡的子項目沒有 .nav-link 這個 class，
+    // 只綁 .nav-link 的話點子項目選單不會收起來。
+    const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (navMenu) { navMenu.classList.remove('active'); }

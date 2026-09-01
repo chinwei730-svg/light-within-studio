@@ -1334,79 +1334,118 @@ body {
 }
 
 /* --- 導覽列：領域 + 下拉課程 -----------------------------------
-   五個項目各自是一個可點的連結（進領域頁），
-   滑過才展開該領域底下的課程。課程再多也只佔一層。
-   ---------------------------------------------------------------- */
-.nav-menu {
-    gap: 2rem;
-}
+   五個項目各自是一個可點的連結（進領域頁），課程收在下拉裡，
+   所以課程再多，導覽列都只有一層。
 
+   寫法是 mobile-first：預設（手機）就是一段縮排的子清單，
+   浮動下拉是「桌機才追加」的行為，包在 min-width: 769px 裡。
+
+   ⚠️ 不要反過來寫。之前寫成「桌機當預設、手機再逐條撤銷」時出過
+   一個 bug：media query 不增加特異性，
+   .nav-item:focus-within .nav-sub 是 (0,3,0)，
+   手機端拿 .nav-sub (0,1,0) 蓋不掉，手指一點子項目就取得 focus，
+   桌機用來置中的 translateX(-50%) 就活了過來，
+   把滿版的子選單往左推出畫面一半。
+   ---------------------------------------------------------------- */
 .nav-item {
     position: relative;
 }
 
-/* 滑鼠從導覽列移到下拉選單之間有空隙，補一塊透明區域避免選單閃掉 */
-.nav-item::after {
-    content: "";
-    position: absolute;
-    left: -10px;
-    right: -10px;
-    top: 100%;
-    height: 18px;
-}
-
+/* 手機：下拉就是一段縮排的子清單，沒有定位、沒有動畫 */
 .nav-sub {
     list-style: none;
     margin: 0;
-    padding: 0.6rem 0;
-    position: absolute;
-    top: calc(100% + 16px);
-    left: 50%;
-    transform: translateX(-50%) translateY(6px);
-    min-width: 215px;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(201, 169, 97, 0.18);
-    border-top: 2px solid var(--accent);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    border-radius: 2px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    z-index: 1100;
-}
-
-.nav-item:hover .nav-sub,
-.nav-item:focus-within .nav-sub {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    padding: 0.3rem 0 0;
 }
 
 .nav-sub a,
 .nav-sub .is-soon {
     display: block;
-    padding: 0.55rem 1.3rem;
-    font-size: 0.88rem;
-    color: #5A5A5A;
+    padding: 0.25rem 0;
+    font-size: 0.85rem;
+    color: #8B7355;
     text-decoration: none;
     white-space: nowrap;
-    transition: background 0.25s ease, color 0.25s ease;
-}
-
-.nav-sub a:hover {
-    background: var(--accent-soft);
-    color: var(--accent-deep);
 }
 
 /* 還沒開的課先列出來但不做成連結，讓訪客知道之後會有 */
 .nav-sub .is-soon {
-    color: #B5B5B5;
     cursor: default;
 }
 
-/* 領域一多，1080px 以下就會擠，先縮間距再縮字級 */
-@media (max-width: 1080px) {
+/* --- 桌機（≥769px）：下拉才變成浮動選單 --- */
+@media (min-width: 769px) {
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    /* 滑鼠從導覽列移到下拉選單之間有空隙，補一塊透明區域避免選單閃掉 */
+    .nav-item::after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        right: -10px;
+        top: 100%;
+        height: 18px;
+    }
+
+    .nav-sub {
+        position: absolute;
+        top: calc(100% + 16px);
+        left: 50%;
+        transform: translateX(-50%) translateY(6px);
+        padding: 0.6rem 0;
+        min-width: 215px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(201, 169, 97, 0.18);
+        border-top: 2px solid var(--accent);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        border-radius: 2px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        z-index: 1100;
+    }
+
+    .nav-sub a,
+    .nav-sub .is-soon {
+        padding: 0.55rem 1.3rem;
+        font-size: 0.88rem;
+        color: #5A5A5A;
+        transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .nav-sub .is-soon {
+        color: #B5B5B5;
+    }
+
+    /* 鍵盤 Tab 進來也要能展開，所以這條不受下面的 hover 能力限制 */
+    .nav-item:focus-within .nav-sub {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 只有真的有滑鼠的裝置才用 hover 展開。
+   觸控裝置的 :hover 會「黏住」——點過的項目會維持展開狀態不放，
+   所以用 hover/pointer 判斷裝置能力，比用螢幕寬度猜準確。 */
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+    .nav-item:hover .nav-sub {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .nav-sub a:hover {
+        background: var(--accent-soft);
+        color: var(--accent-deep);
+    }
+}
+
+/* 領域一多，桌機在 1080px 以下就會擠，先縮間距再縮字級 */
+@media (min-width: 769px) and (max-width: 1080px) {
     .nav-menu {
         gap: 1.3rem;
     }
@@ -1416,33 +1455,17 @@ body {
     }
 }
 
+/* --- 手機選單：五個領域 + 13 個子項目，攤平後接近一個螢幕高 -----
+   固定定位的選單一旦超出畫面高度就再也捲不到，因此改成可捲動。
+   ---------------------------------------------------------------- */
 @media (max-width: 768px) {
     .nav-menu {
-        gap: 1.4rem;
-    }
-
-    /* 手機沒有 hover，下拉直接攤平成縮排的子項目 */
-    .nav-sub {
-        position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        min-width: 0;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        padding: 0.3rem 0 0;
-    }
-
-    .nav-sub a,
-    .nav-sub .is-soon {
-        padding: 0.3rem 0;
-        font-size: 0.85rem;
-        color: #8B7355;
-    }
-
-    .nav-item::after {
-        display: none;
+        gap: 1rem;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        /* 底部留白要蓋過課程頁的浮動報名條，否則最後一項會被壓住 */
+        padding: 1.6rem 0 5.5rem;
     }
 }
 
@@ -1909,27 +1932,3 @@ a.logo {
     background: var(--accent-deep);
 }
 
-/* --- 手機選單：五個領域攤平後會超過一個螢幕 -------------------
-   純奧剛版只有 5 個項目塞得下，擴充版是 5 個領域 + 13 個子項目，
-   固定定位的選單一旦超出畫面高度就再也捲不到，因此改成可捲動，
-   同時把行距收緊一點。
-   ---------------------------------------------------------------- */
-@media (max-width: 768px) {
-    .nav-menu {
-        gap: 1rem;
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        /* 底部留白要蓋過課程頁的浮動報名條，否則最後一項會被壓住 */
-        padding: 1.6rem 0 5.5rem;
-    }
-
-    .nav-sub {
-        padding-top: 0.2rem;
-    }
-
-    .nav-sub a,
-    .nav-sub .is-soon {
-        padding: 0.25rem 0;
-    }
-}
