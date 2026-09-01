@@ -64,8 +64,10 @@ future-expansion:   images/common/{title,about_us}/
 
 擴充版的完整規則（含 HEIC 原始檔擺法）見 `images/資料夾與命名規則.txt`（只存在於 `future-expansion` 分支）。
 
-`.HEIC` 是 iPhone 原始檔，瀏覽器不支援，已被 gitignore，只留本機。
-因為未追蹤，切換分支時不會跟著移動，會在舊路徑留下幽靈目錄——這是正常的，對網站無影響。
+`.HEIC` 是 iPhone 原始檔，瀏覽器不支援，**不放在這個 repo 裡**，
+改放隔壁的 `C:\Fatek_9702\web_side_原始檔\<領域>\`，檔名與 jpg 相同。
+放在 repo 內會有問題：HEIC 被 gitignore、未追蹤，切分支時不會跟著移動，
+會在舊路徑留下空的幽靈目錄。`.gitignore` 仍保留 `*.HEIC` 當保險。
 
 ---
 

@@ -64,14 +64,22 @@ pdf/
   3. 照片從 c_0001.jpg、s_0001.jpg 開始編
 
 
-五、iPhone 原始檔（.HEIC）
+五、iPhone 原始檔（.HEIC）放在 repo 外面
 ----------------------------------------------------------------------
-瀏覽器不支援 HEIC，所以 .gitignore 有把它排除，只留在本機。
-原始檔請和轉好的 jpg 放同一個資料夾、用同一組號碼，
-之後要重新裁切才找得到來源。
+瀏覽器不支援 HEIC，網站只用轉好的 jpg。原始檔不放在這個 repo 裡，
+改放隔壁的資料夾：
 
-  images/orgonite/course/c_0001.HEIC   ← 原始檔（不上傳）
-  images/orgonite/course/c_0001.jpg    ← 網站實際使用
+  C:\Fatek_9702\web_side_原始檔\<領域>\<檔名>.HEIC
+
+  例：
+    web_side_原始檔\orgonite\c_0001.HEIC        ← 原始檔
+    web_side\images\orgonite\course\c_0001.jpg   ← 網站實際使用
+
+  檔名與 jpg 完全一致，只有副檔名不同，用檔名就能對上。
+
+原因：HEIC 被 .gitignore 排除、不進版控，git 切換分支時不會跟著移動，
+放在 images/ 底下會在舊路徑留下空的幽靈目錄，讓人以為分支沒切乾淨。
+.gitignore 仍然保留 *.HEIC 規則，當作萬一有人放進來的保險。
 
 
 六、空資料夾裡的 .gitkeep
