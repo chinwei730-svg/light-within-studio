@@ -18,6 +18,6 @@ Thumbs.db
 *.heic
 作品成果_四件經典/
 
-# AI 工具自動產生的設定檔（mattpocock-skills 外掛），與網站內容無關
-CLAUDE.md
+# AI 工具外掛自動產生的內部設定（非專案內容）
+# 註：CLAUDE.md 不在此列，那是團隊共用的專案說明，要進版控
 docs/agents/
