@@ -42,8 +42,10 @@ body {
     align-items: center;
     gap: 0.7rem;
     font-size: 1.25rem;
-    font-weight: 600;
-    color: #3E3E3E;
+    /* 品牌名不是畫面主角，用暖棕搭配較輕的字重，
+       避免深黑在一片金色調的導覽列裡過於突兀 */
+    font-weight: 500;
+    color: #6B5B45;
     letter-spacing: 0.5px;
 }
 
