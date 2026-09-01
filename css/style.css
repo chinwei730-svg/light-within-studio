@@ -38,10 +38,27 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
     font-size: 1.5rem;
     font-weight: 600;
     color: #3E3E3E;
     letter-spacing: 0.5px;
+}
+
+/* 商標圖示：正方形 logo 縮到導覽列尺寸內部文字會糊掉，
+   因此僅作為識別標記，品牌名稱仍由右側文字負責 */
+.logo-mark {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.logo-text {
+    display: block;
+    line-height: 1.25;
 }
 
 .logo-subtitle {
@@ -1120,5 +1137,18 @@ body {
     .hero-lede {
         font-size: 0.95rem;
         line-height: 1.85;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 窄螢幕縮小商標，確保與漢堡選單並排不擠 */
+    .logo-mark {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo {
+        gap: 0.5rem;
+        font-size: 1.3rem;
     }
 }
