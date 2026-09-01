@@ -41,7 +41,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #3E3E3E;
     letter-spacing: 0.5px;
@@ -63,10 +63,10 @@ body {
 
 .logo-subtitle {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.62rem;
     font-weight: 300;
     color: #C9A961;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     margin-top: -2px;
     text-transform: uppercase;
 }
@@ -1149,6 +1149,6 @@ body {
 
     .logo {
         gap: 0.5rem;
-        font-size: 1.3rem;
+        font-size: 1.05rem;
     }
 }
