@@ -3,78 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>芯光點點 Light Within Studio｜奧剛能量藝術手作課程</title>
-    <meta name="description" content="芯光點點位於新北市新埔捷運站附近，專營奧剛能量藝術手作課程。體驗班 3 小時完成兩座 5cm 能量金字塔，精修二日班 10 小時完成四件經典創作。零基礎可上手，小班教學。">
-    <link rel="canonical" href="https://lightwithinstudio.tw/">
+    <title>芯光點點 Light Within Studio｜奧剛．曼陀羅．塔羅．八字</title>
+    <meta name="description" content="芯光點點位於新北市新埔捷運站附近，提供奧剛能量藝術手作、曼陀羅繪畫、塔羅占卜與八字命理。零基礎可上手，小班教學，教室採預約制。">
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="芯光點點 Light Within Studio">
-    <meta property="og:title" content="芯光點點 Light Within Studio｜奧剛能量藝術手作課程">
-    <meta property="og:description" content="新北市新埔站附近的奧剛能量藝術教室。體驗班 3 小時完成兩座 5cm 能量金字塔，精修二日班完成四件經典創作。零基礎可上手。">
-    <meta property="og:image" content="https://lightwithinstudio.tw/images/course/c_0004.jpg">
-    <meta property="og:url" content="https://lightwithinstudio.tw/">
+    <!-- ⚠️ 設計預覽版：未來擴展規劃用，尚未定案。
+         這一行讓搜尋引擎不要收錄，避免草稿內容排到正式站前面。
+         正式上線時請把 robots 這行刪掉，並補上 canonical。 -->
+    <meta name="robots" content="noindex, nofollow">
 
-    <link rel="stylesheet" href="css/style.css?v=20260901e">
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "Organization",
-            "@id": "https://lightwithinstudio.tw/#organization",
-            "name": "芯光點點",
-            "alternateName": "Light Within Studio",
-            "url": "https://lightwithinstudio.tw/",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://lightwithinstudio.tw/images/title/t_0001.JPG",
-                "width": 2000,
-                "height": 2000
-            },
-            "image": "https://lightwithinstudio.tw/images/course/c_0004.jpg",
-            "description": "芯光點點位於新北市板橋區、新埔捷運站附近，專營奧剛能量藝術手作課程。提供體驗班與精修二日班，零基礎可上手，採一對一或一對二小班教學。",
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "TW",
-                "addressRegion": "新北市",
-                "addressLocality": "板橋區"
-            },
-            "sameAs": [
-                "https://www.instagram.com/lightwithin.st/",
-                "https://www.facebook.com/naomitarot888"
-            ]
-        },
-        {
-            "@type": "WebSite",
-            "@id": "https://lightwithinstudio.tw/#website",
-            "url": "https://lightwithinstudio.tw/",
-            "name": "芯光點點 Light Within Studio",
-            "inLanguage": "zh-TW",
-            "publisher": {
-                "@id": "https://lightwithinstudio.tw/#organization"
-            }
-        }
-    ]
-}
-    </script>
+    <link rel="stylesheet" href="css/style.css?v=exp01">
 </head>
 <body>
-    <!-- 導航列 -->
+    <!-- 導航列 ─────────────────────────────────────────────────
+         五個領域各自是一個可點的連結（進領域頁），滑鼠移上去才展開
+         該領域的課程。課程再多，導覽列都只有一層，不會愈長愈亂。
+         手機版下拉會自動攤平成縮排子項目（見 style.css）。
+    ────────────────────────────────────────────────────────── -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="images/title/t_0002.jpg" alt="芯光點點 Light Within Studio 商標" class="logo-mark" width="46" height="46">
                 <span class="logo-text">
                     芯光點點
                     <span class="logo-subtitle">Light Within Studio</span>
                 </span>
-            </div>
+            </a>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">首頁</a></li>
                 <li><a href="#about" class="nav-link">關於我們</a></li>
-                <li><a href="what-is-orgonite.html" class="nav-link">認識奧剛</a></li>
-                <li><a href="#courses" class="nav-link">課程介紹</a></li>
-                <li><a href="#gallery" class="nav-link">作品展示</a></li>
+
+                <li class="nav-item theme-orgonite">
+                    <a href="orgonite.html" class="nav-link">奧剛能量藝術</a>
+                    <ul class="nav-sub">
+                        <li><a href="what-is-orgonite.html">認識奧剛</a></li>
+                        <li><a href="course-trial.html">體驗班・3 小時</a></li>
+                        <li><a href="course-advanced-2days.html">精修二日班・13 小時</a></li>
+                        <li><a href="orgonite.html">全部奧剛課程</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item theme-mandala">
+                    <a href="mandala.html" class="nav-link">曼陀羅</a>
+                    <ul class="nav-sub">
+                        <!-- TODO：課程確定後，把 is-soon 的 span 換成 <a href="course-mandala-xxx.html"> -->
+                        <li><span class="is-soon">入門課・籌備中</span></li>
+                        <li><span class="is-soon">進階課・籌備中</span></li>
+                        <li><a href="mandala.html">全部曼陀羅課程</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item theme-tarot">
+                    <a href="tarot.html" class="nav-link">塔羅占卜</a>
+                    <ul class="nav-sub">
+                        <!-- TODO：占卜服務與教學課程的名稱、時長、價格待補 -->
+                        <li><span class="is-soon">個人占卜・籌備中</span></li>
+                        <li><span class="is-soon">牌義入門・籌備中</span></li>
+                        <li><a href="tarot.html">全部塔羅服務</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item theme-bazi">
+                    <a href="bazi.html" class="nav-link">八字命理</a>
+                    <ul class="nav-sub">
+                        <!-- TODO：命盤解析與教學課程的名稱、時長、價格待補 -->
+                        <li><span class="is-soon">命盤解析・籌備中</span></li>
+                        <li><span class="is-soon">八字基礎・籌備中</span></li>
+                        <li><a href="bazi.html">全部八字服務</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -84,14 +79,167 @@
         </div>
     </nav>
 
-    <!-- 首頁橫幅 -->
+    <!-- 首頁橫幅 ───────────────────────────────────────────────
+         四個領域之後，Hero 不能再替某一門課說話。
+         這裡只講品牌共通的那一句，四顆膠囊負責讓訪客第一眼就知道
+         「這裡有四種東西」，而且可以直接點進去。
+    ────────────────────────────────────────────────────────── -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>芯光點點</h1>
             <p class="hero-english">Light Within Studio</p>
-            <p class="hero-subtitle">親手做一座奧剛，把光留在日常裡</p>
-            <p class="hero-lede">不論是零基礎的第一次嘗試，或想走得更深的進階創作，都能依你的節奏開始。</p>
-            <a href="#courses" class="btn btn-primary">探索課程</a>
+            <p class="hero-subtitle">四條路，通往同一件事</p>
+            <p class="hero-lede">手作的溫度、色彩的靜心、牌卡的提醒、命盤的地圖——不論你從哪一個開始，都是往自己走近一點。</p>
+            <ul class="hero-services">
+                <li class="theme-orgonite">
+                    <a href="orgonite.html" class="hero-chip">
+                        <span class="hero-chip-en">Orgonite</span>
+                        <span class="hero-chip-zh">奧剛能量藝術</span>
+                    </a>
+                </li>
+                <li class="theme-mandala">
+                    <a href="mandala.html" class="hero-chip">
+                        <span class="hero-chip-en">Mandala</span>
+                        <span class="hero-chip-zh">曼陀羅</span>
+                    </a>
+                </li>
+                <li class="theme-tarot">
+                    <a href="tarot.html" class="hero-chip">
+                        <span class="hero-chip-en">Tarot</span>
+                        <span class="hero-chip-zh">塔羅占卜</span>
+                    </a>
+                </li>
+                <li class="theme-bazi">
+                    <a href="bazi.html" class="hero-chip">
+                        <span class="hero-chip-en">BaZi</span>
+                        <span class="hero-chip-zh">八字命理</span>
+                    </a>
+                </li>
+            </ul>
+            <a href="#services" class="btn btn-primary">探索四大領域</a>
+        </div>
+    </section>
+
+    <!-- 四大領域總覽 ───────────────────────────────────────────
+         首頁只列「領域」，不列課程清單。每張卡片露出 2～3 門代表
+         課程當預告，完整課表交給領域頁。
+         這樣課程從 2 門長到 20 門，首頁的長度都不會變。
+    ────────────────────────────────────────────────────────── -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">四大領域</h2>
+            <p class="section-subtitle">Our Practice</p>
+            <p class="section-lede">每個領域都有自己的入門與進階課程。先看看哪一個在叫你，再進去看完整課表。</p>
+
+            <div class="service-grid">
+                <!-- 奧剛：唯一已上線的領域，內容為正式資料 -->
+                <article class="service-card theme-orgonite">
+                    <div class="service-image">
+                        <img src="images/course/c_0004.jpg" alt="奧剛能量金字塔作品">
+                    </div>
+                    <div class="service-body">
+                        <p class="service-en">Orgonite</p>
+                        <h3>奧剛能量藝術</h3>
+                        <p class="service-desc">把水晶、金屬與銅線一同封存在樹脂裡的手作工藝。零基礎也能親手完成一座，讓它成為空間裡穩定的存在。</p>
+                        <ul class="service-courses">
+                            <li>
+                                <a href="course-trial.html">
+                                    <span>體驗班</span>
+                                    <span class="service-course-meta">3 小時・NT$3,600</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="course-advanced-2days.html">
+                                    <span>精修二日班</span>
+                                    <span class="service-course-meta">13 小時・NT$15,900</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="orgonite.html" class="service-link">查看奧剛全部課程 →</a>
+                    </div>
+                </article>
+
+                <!-- 曼陀羅：TODO 課程名稱、時數、價格、照片全部待補 -->
+                <article class="service-card theme-mandala">
+                    <div class="service-image is-placeholder">
+                        <img src="images/title/t_0002.jpg" alt="曼陀羅課程照片準備中">
+                    </div>
+                    <div class="service-body">
+                        <p class="service-en">Mandala</p>
+                        <h3>曼陀羅</h3>
+                        <p class="service-desc">〔文案待定〕以圓為中心，一筆一筆把注意力收回來的繪畫練習。不需要畫畫底子。</p>
+                        <ul class="service-courses">
+                            <li>
+                                <span class="is-soon">
+                                    <span>入門課</span>
+                                    <span class="service-course-meta">籌備中</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="is-soon">
+                                    <span>進階課</span>
+                                    <span class="service-course-meta">籌備中</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <a href="mandala.html" class="service-link">了解曼陀羅 →</a>
+                    </div>
+                </article>
+
+                <!-- 塔羅：TODO 服務名稱、時長、價格、照片待補 -->
+                <article class="service-card theme-tarot">
+                    <div class="service-image is-placeholder">
+                        <img src="images/title/t_0002.jpg" alt="塔羅課程照片準備中">
+                    </div>
+                    <div class="service-body">
+                        <p class="service-en">Tarot</p>
+                        <h3>塔羅占卜</h3>
+                        <p class="service-desc">〔文案待定〕在卡住的時候，換一個角度看同一件事。可以只做一次占卜，也可以學著自己讀牌。</p>
+                        <ul class="service-courses">
+                            <li>
+                                <span class="is-soon">
+                                    <span>個人占卜</span>
+                                    <span class="service-course-meta">籌備中</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="is-soon">
+                                    <span>牌義入門</span>
+                                    <span class="service-course-meta">籌備中</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <a href="tarot.html" class="service-link">了解塔羅占卜 →</a>
+                    </div>
+                </article>
+
+                <!-- 八字：TODO 服務名稱、時長、價格、照片待補 -->
+                <article class="service-card theme-bazi">
+                    <div class="service-image is-placeholder">
+                        <img src="images/title/t_0002.jpg" alt="八字命理照片準備中">
+                    </div>
+                    <div class="service-body">
+                        <p class="service-en">BaZi</p>
+                        <h3>八字命理</h3>
+                        <p class="service-desc">〔文案待定〕從出生的時間看見自己的節奏與傾向，把它當成一張地圖，而不是一份判決。</p>
+                        <ul class="service-courses">
+                            <li>
+                                <span class="is-soon">
+                                    <span>命盤解析</span>
+                                    <span class="service-course-meta">籌備中</span>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="is-soon">
+                                    <span>八字基礎</span>
+                                    <span class="service-course-meta">籌備中</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <a href="bazi.html" class="service-link">了解八字命理 →</a>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -102,71 +250,16 @@
             <p class="section-subtitle">About Us</p>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>讓奧剛成為生活美學</h3>
-                    <p>芯光點點是一間位於新北板橋、新埔捷運站旁的奧剛能量藝術工作室。奧剛（Orgonite，中文也常寫作奧根、奧剛石）是把水晶、金屬與銅線一同封存在樹脂裡的手作工藝，常見形式包含金字塔、能量塔與杯墊置物盤。我們做的，是能真正放進日常空間的作品。</p>
-                    <p>以前奧剛是能量擺件，我們希望它可以是生活美學——為空間注入一份穩定力量，讓它成為安心的家；也為自己親手做一份禮物，讓日常流動著溫柔與光芒。</p>
-                    <p>課程採一對一或一對二小班制，零基礎、沒碰過 DIY 手作也能上手。從樹脂配比、銅線螺旋纏繞到水晶色彩搭配，每個步驟都由老師陪著你親手做過一次。教室採預約制，上課時間依你的節奏彈性安排。</p>
+                    <!-- TODO：這段文案原本只寫奧剛，擴充版需要重寫成能同時涵蓋四個領域的說法。
+                         下面是初稿，請老師確認語氣與說法。 -->
+                    <h3>把光留在日常裡</h3>
+                    <p>芯光點點是一間位於新北板橋、新埔捷運站旁的工作室。我們從奧剛能量藝術開始，慢慢長出曼陀羅、塔羅與八字——形式不同，做的其實是同一件事：讓人在忙亂的日子裡，有一段能安靜下來、把注意力放回自己身上的時間。</p>
+                    <p>手作與繪畫，是用雙手慢下來；牌卡與命盤，是換個角度看自己。它們不互相取代，你可以只選一種，也可以在不同階段走進不同的房間。</p>
+                    <p>所有課程與服務都採一對一或小班制，零基礎可以直接開始。教室採預約制，時間依你的節奏彈性安排。</p>
                 </div>
                 <div class="about-image">
                     <img src="images/about_us/a_0001.jpg" alt="芯光點點教學環境">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 課程介紹 -->
-    <section id="courses" class="courses">
-        <div class="container">
-            <h2 class="section-title">課程介紹</h2>
-            <p class="section-subtitle">Our Courses</p>
-            <div class="course-grid">
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="images/course/c_0001.jpg" alt="課程照片1">
-                    </div>
-                    <div class="course-info">
-                        <h3>奧剛能量金字塔 <span class="course-type">體驗班</span></h3>
-                        <p>3 小時零基礎體驗課，掌握奧剛核心原理，親手完成兩座 5cm 能量金字塔。費用含材料費與教學費。</p>
-                        <div class="course-actions">
-                            <a href="https://line.me/R/ti/p/@360edfkc" class="btn btn-register" target="_blank" rel="noopener">立即報名</a>
-                            <div class="course-actions-row">
-                                <a href="course-trial.html" class="btn btn-sm btn-outline">課程詳情</a>
-                                <a href="pdf/class_trial.pdf" class="btn btn-sm btn-outline" target="_blank" rel="noopener">簡章 PDF</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="images/course/c_0002.jpg" alt="課程照片2">
-                    </div>
-                    <div class="course-info">
-                        <h3>能量藝術奧剛 <span class="course-type">精修二日班</span></h3>
-                        <p>精修 10 小時分兩日進行，另加贈 3 小時。一對一或一對二小班教學，完成四件經典創作。</p>
-                        <div class="course-actions">
-                            <a href="https://line.me/R/ti/p/@360edfkc" class="btn btn-register" target="_blank" rel="noopener">立即報名</a>
-                            <div class="course-actions-row">
-                                <a href="course-advanced-2days.html" class="btn btn-sm btn-outline">課程詳情</a>
-                                <a href="pdf/class_advanced_2days.pdf" class="btn btn-sm btn-outline" target="_blank" rel="noopener">簡章 PDF</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 第三門課程尚未有內容，先隱藏。要啟用時把下面整段的註解拿掉，
-                     並補上課程名稱、說明、詳情頁與簡章 PDF 連結。
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="images/course/c_0003.jpg" alt="課程照片3">
-                    </div>
-                    <div class="course-info">
-                        <h3>課程名稱 3</h3>
-                        <p>這裡是課程的簡短介紹，描述課程的特色和學習內容。</p>
-                        <a href="#" class="btn btn-register">立即報名</a>
-                    </div>
-                </div>
-                -->
             </div>
         </div>
     </section>
@@ -176,6 +269,8 @@
         <div class="container">
             <h2 class="section-title">作品展示</h2>
             <p class="section-subtitle">Gallery</p>
+            <!-- TODO：目前全部是奧剛作品。曼陀羅開課後這裡要混入畫作，
+                 或改成分頁籤（奧剛／曼陀羅）避免看起來只有一種東西。 -->
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="images/showcase/s_0001.jpg" alt="作品1">
@@ -189,7 +284,7 @@
                 <div class="gallery-item">
                     <img src="images/showcase/s_0004.jpg" alt="作品4">
                 </div>
-				<div class="gallery-item">
+                <div class="gallery-item">
                     <img src="images/showcase/s_0005.jpg" alt="作品5">
                 </div>
             </div>
@@ -200,6 +295,14 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <nav class="footer-nav">
+                    <a href="#about">關於我們</a>
+                    <a href="orgonite.html">奧剛能量藝術</a>
+                    <a href="mandala.html">曼陀羅</a>
+                    <a href="tarot.html">塔羅占卜</a>
+                    <a href="bazi.html">八字命理</a>
+                    <a href="#gallery">作品展示</a>
+                </nav>
                 <p class="footer-location">新北市板橋區・新埔捷運站 5 號出口步行 5 分鐘｜教室採預約制</p>
                 <div class="footer-social">
                     <a href="https://www.instagram.com/lightwithin.st/" target="_blank" rel="me noopener" aria-label="芯光點點 Instagram">
@@ -213,10 +316,12 @@
                 </div>
                 <p>&copy; 2026 芯光點點. All rights reserved.</p>
                 <p class="footer-english">Light Within Studio</p>
+                <!-- 正式上線前請刪掉這一行 -->
+                <p class="preview-note">本頁為「未來擴展版」設計預覽，內容尚未定案。</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js?v=20260901e"></script>
+    <script src="js/script.js?v=exp01"></script>
 </body>
 </html>

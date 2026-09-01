@@ -97,3 +97,43 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 });
+
+// ============================================================
+// 未來擴展版：領域頁的課程篩選
+// ------------------------------------------------------------
+// 同一個領域超過四、五門課之後，訪客需要的是分類而不是捲動。
+// 這裡只做 class 的加減，沒有課程資料庫也能用；
+// 頁面上沒有 .course-filter 時整段不會執行。
+// 要退回純奧剛版時，把這一整段刪掉即可。
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+    var groups = document.querySelectorAll('.course-filter');
+
+    groups.forEach(function(group) {
+        // 篩選列後面第一個課程格，就是這組按鈕要控制的對象
+        var grid = group.parentElement.querySelector('.course-grid');
+        if (!grid) {
+            return;
+        }
+
+        var buttons = group.querySelectorAll('.filter-btn');
+        var cards = grid.querySelectorAll('.course-card');
+
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var wanted = this.getAttribute('data-filter');
+
+                buttons.forEach(function(b) {
+                    b.classList.remove('is-active');
+                });
+                this.classList.add('is-active');
+
+                cards.forEach(function(card) {
+                    var level = card.getAttribute('data-level');
+                    var show = (wanted === 'all' || level === wanted);
+                    card.classList.toggle('is-hidden', !show);
+                });
+            });
+        });
+    });
+});
