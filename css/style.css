@@ -1184,3 +1184,109 @@ body {
     height: 20px;
     flex-shrink: 0;
 }
+
+/* ============================================================
+   文章型頁面（單欄長文、表格、常見問題）
+   ============================================================ */
+
+/* 單欄文章內容，限制行長以維持可讀性 */
+.article-body {
+    max-width: 760px;
+}
+
+.article-body .course-list li {
+    margin-bottom: 1.1rem;
+}
+
+/* 表格：窄螢幕時可獨立橫向捲動，不撐破版面 */
+.table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    min-width: 420px;
+}
+
+.info-table th,
+.info-table td {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.22);
+    color: #5A5A5A;
+    line-height: 1.8;
+}
+
+.info-table th {
+    color: #6B5B45;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(201, 169, 97, 0.5);
+    white-space: nowrap;
+}
+
+.info-table td:first-child {
+    color: #3E3E3E;
+    white-space: nowrap;
+}
+
+.info-table tbody tr:last-child th,
+.info-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 立場聲明：關於能量效果的說明，需與一般段落區隔 */
+.statement-note {
+    background: rgba(201, 169, 97, 0.08);
+    border-left: 3px solid #C9A961;
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #6B5B45;
+}
+
+/* 常見問題 */
+.faq-item {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.18);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #3E3E3E;
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 1.6rem;
+}
+
+.faq-item h3::before {
+    content: "Q";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #C9A961;
+    font-weight: 400;
+}
+
+.faq-item p {
+    margin: 0;
+    padding-left: 1.6rem;
+}
+
+@media (max-width: 768px) {
+    .info-table {
+        font-size: 0.92rem;
+    }
+
+    .info-table th,
+    .info-table td {
+        padding: 0.7rem 0.8rem;
+    }
+}
