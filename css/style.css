@@ -125,7 +125,7 @@ body {
 
 /* 首頁橫幅 */
 .hero {
-    background: linear-gradient(rgba(250, 249, 246, 0.85), rgba(245, 245, 220, 0.85)), url('../images/title/t_0001.JPG');
+    background: linear-gradient(rgba(250, 249, 246, 0.85), rgba(245, 245, 220, 0.85)), url('../images/common/title/t_0001.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
