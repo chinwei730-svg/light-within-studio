@@ -153,10 +153,21 @@ body {
 
 .hero-subtitle {
     font-size: 1.3rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     animation: fadeInUp 1s 0.2s backwards;
     color: #5A5A5A;
     font-weight: 300;
+}
+
+/* hero 副標下方的補充說明，視覺上從屬於副標 */
+.hero-lede {
+    font-size: 1rem;
+    color: #7A7A7A;
+    font-weight: 300;
+    line-height: 1.9;
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    animation: fadeInUp 1s 0.3s backwards;
 }
 
 /* 按鈕樣式 */
@@ -1103,4 +1114,11 @@ body {
 .work-item .map-note {
     margin-top: 0.5rem;
     font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .hero-lede {
+        font-size: 0.95rem;
+        line-height: 1.85;
+    }
 }
