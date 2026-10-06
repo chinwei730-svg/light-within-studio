@@ -432,6 +432,11 @@ body {
     transition: transform 0.6s ease;
 }
 
+/* 9:16 裁切時主體偏右的照片，把取景往右移 */
+.gallery-item:nth-child(9) img { object-position: 70% center; }
+.gallery-item:nth-child(10) img,
+.gallery-item:nth-child(12) img { object-position: 60% center; }
+
 .gallery-item:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
