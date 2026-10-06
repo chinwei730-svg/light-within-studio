@@ -1290,3 +1290,94 @@ body {
         padding: 0.7rem 0.8rem;
     }
 }
+
+/* ============================================================
+   開課月曆（schedule.html）
+   ============================================================ */
+.sched-hero { padding-bottom: 50px; }
+.sched-hero .container { text-align: center; }
+
+.sched-legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1.8rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+}
+
+.sched-legend li { display: flex; align-items: center; gap: 0.5rem; }
+
+.sched-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    flex: none;
+}
+
+.sched-months {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sched-month h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.sched-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.sched-dow {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #C9A961;
+    padding: 0.3rem 0;
+}
+
+.sched-day {
+    min-height: 62px;
+    padding: 4px 3px;
+    border-radius: 6px;
+    background: #FAF9F6;
+    border: 1px solid rgba(201, 169, 97, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    line-height: 1.3;
+}
+
+.sched-day.is-empty { background: transparent; border-color: transparent; }
+.sched-num { font-size: 0.95rem; }
+.sched-tag { font-size: 0.65rem; text-align: center; word-break: keep-all; }
+
+.sched-day.is-trial, .sched-swatch.is-trial { background: #C9A961; border-color: #C9A961; color: #FFFFFF; }
+.sched-day.is-tycu,  .sched-swatch.is-tycu  { background: #5E8C8A; border-color: #5E8C8A; color: #FFFFFF; }
+.sched-day.is-adv,   .sched-swatch.is-adv   { background: #7A5C8E; border-color: #7A5C8E; color: #FFFFFF; }
+.sched-day.is-trial .sched-num,
+.sched-day.is-tycu .sched-num,
+.sched-day.is-adv .sched-num { font-weight: 700; }
+
+.sched-note {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: #5A5A5A;
+}
+
+.sched-note a { color: #C9A961; }
+
+@media (max-width: 480px) {
+    .sched-months { grid-template-columns: 1fr; }
+    .sched-day { min-height: 56px; }
+}
