@@ -1294,8 +1294,13 @@ body {
 /* ============================================================
    開課月曆（schedule.html）
    ============================================================ */
-.sched-hero { padding-bottom: 50px; }
-.sched-hero .container { text-align: center; }
+.schedule {
+    padding: 100px 20px;
+    background: #FFFFFF;
+}
+
+.sched-lede { text-align: center; margin: -1.5rem 0 2rem; color: #5A5A5A; }
+.sched-cta { text-align: center; margin-top: 2rem; }
 
 .sched-legend {
     list-style: none;
