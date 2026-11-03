@@ -1376,9 +1376,13 @@ body {
 .sched-day.is-trial, .sched-swatch.is-trial { background: #C9A961; border-color: #C9A961; color: #FFFFFF; }
 .sched-day.is-tycu,  .sched-swatch.is-tycu  { background: #5E8C8A; border-color: #5E8C8A; color: #FFFFFF; }
 .sched-day.is-adv,   .sched-swatch.is-adv   { background: #7A5C8E; border-color: #7A5C8E; color: #FFFFFF; }
+.sched-day.is-knu,   .sched-swatch.is-knu   { background: #C77B5B; border-color: #C77B5B; color: #FFFFFF; }
+.sched-day.is-full,  .sched-swatch.is-full  { background: #DCD9D3; border-color: #DCD9D3; color: #8A8782; }
 .sched-day.is-trial .sched-num,
 .sched-day.is-tycu .sched-num,
-.sched-day.is-adv .sched-num { font-weight: 700; }
+.sched-day.is-adv .sched-num,
+.sched-day.is-knu .sched-num { font-weight: 700; }
+.sched-day.is-full .sched-num { text-decoration: line-through; }
 
 .sched-note {
     text-align: center;
