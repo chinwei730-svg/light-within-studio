@@ -1737,3 +1737,12 @@ body {
 
     .corporate-text .btn { display: table; margin: 0 auto; }
 }
+
+/* 詞組不拆開：文字依詞組換行，避免一兩個字孤零零掉到下一行 */
+.ph { display: inline-block; }
+
+.corporate-text p { text-wrap: pretty; }
+
+/* 月曆：欄寬固定平分，不被較長的標籤撐開；標籤可在 <wbr> 處換行 */
+.sched-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.sched-day { min-width: 0; }
