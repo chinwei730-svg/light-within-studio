@@ -1724,3 +1724,16 @@ body {
     .album-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
     .lightbox-prev, .lightbox-next { font-size: 2.2rem; }
 }
+
+/* 企業合作介紹：手機版拿掉強制換行，整段自然換行並靠左；電腦版維持置中分行 */
+@media (max-width: 768px) {
+    .corporate-text p {
+        text-align: left;
+        padding: 0 0.5rem;
+        line-height: 2;
+    }
+
+    .corporate-text .br-pc { display: none; }
+
+    .corporate-text .btn { display: table; margin: 0 auto; }
+}
