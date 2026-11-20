@@ -437,6 +437,10 @@ body {
 .gallery-item:nth-child(10) img,
 .gallery-item:nth-child(12) img { object-position: 60% center; }
 
+/* 第 13 張（s_0013）整張都是主體、接近正方形，不能裁，改完整顯示並用淡底色補邊 */
+.gallery-item:nth-child(13) { background: #F3EFE6; }
+.gallery-item:nth-child(13) img { object-fit: contain; }
+
 .gallery-item:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
