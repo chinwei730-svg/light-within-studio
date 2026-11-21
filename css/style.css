@@ -1169,8 +1169,19 @@ body {
 .footer-social {
     display: flex;
     justify-content: center;
-    gap: 1.8rem;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.8rem;
     margin-bottom: 1.5rem;
+}
+
+/* 手機：四個連結排成 2×2，避免橫向溢出 */
+@media (max-width: 600px) {
+    .footer-social {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        gap: 1rem 2.2rem;
+    }
 }
 
 .footer-social a {
